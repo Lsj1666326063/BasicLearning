@@ -1,0 +1,6 @@
+E:\C#Projects\AssistTest\AssistTest\bin\Release\AssistTest.dll
+E:\C#Projects\AssistTest\AssistTest\bin\Release\AssistTest.pdb
+E:\C#Projects\AssistTest\AssistTest\obj\Release\AssistTest.csprojAssemblyReference.cache
+E:\C#Projects\AssistTest\AssistTest\obj\Release\AssistTest.csproj.CoreCompileInputs.cache
+E:\C#Projects\AssistTest\AssistTest\obj\Release\AssistTest.dll
+E:\C#Projects\AssistTest\AssistTest\obj\Release\AssistTest.pdb

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60D8CECD-8D3D-4356-B31E-8BC608D35D8C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BasicLearning</RootNamespace>
+    <AssemblyName>BasicLearning</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssistTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\AssistTest\AssistTest\bin\Release\AssistTest.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DataStructed\MyList.cs" />
+    <Compile Include="GoF\AbstructFactory.cs" />
+    <Compile Include="GoF\Adapter.cs" />
+    <Compile Include="GoF\Builder.cs" />
+    <Compile Include="GoF\FunFactory.cs" />
+    <Compile Include="GoF\Prototype.cs" />
+    <Compile Include="GoF\SimpleFactory.cs" />
+    <Compile Include="GoF\Singleton.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdParty\LitJson\IJsonWrapper.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonData.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonException.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonMapper.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonReader.cs" />
+    <Compile Include="ThirdParty\LitJson\JsonWriter.cs" />
+    <Compile Include="ThirdParty\LitJson\Lexer.cs" />
+    <Compile Include="ThirdParty\LitJson\Netstandard15Polyfill.cs" />
+    <Compile Include="ThirdParty\LitJson\ParserToken.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Res\GlobalConfig.json" />
+    <Content Include="ThirdParty\LitJson\AssemblyInfo.cs.in" />
+    <Content Include="ThirdParty\LitJson\LitJSON.csproj" />
+    <Content Include="ThirdParty\LitJson\litjson.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

@@ -1,0 +1,7 @@
+﻿{
+  "SimpleFactory":"2",
+  "FunFactory":"JpgPictureReaderFactory",
+  "AbstructFactory":"AndroidSystemFactory",
+  "Builder":"FullVideoInterfaceBuilder",
+  "Adapter":"ClassAdapter"
+}

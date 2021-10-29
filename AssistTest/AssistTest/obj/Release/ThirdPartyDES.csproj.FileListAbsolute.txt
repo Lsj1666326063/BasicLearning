@@ -1,0 +1,6 @@
+E:\C#Projects\AssistTest\ThirdPartyDES\bin\Release\ThirdPartyDES.dll
+E:\C#Projects\AssistTest\ThirdPartyDES\bin\Release\ThirdPartyDES.pdb
+E:\C#Projects\AssistTest\ThirdPartyDES\obj\Release\ThirdPartyDES.csprojAssemblyReference.cache
+E:\C#Projects\AssistTest\ThirdPartyDES\obj\Release\ThirdPartyDES.csproj.CoreCompileInputs.cache
+E:\C#Projects\AssistTest\ThirdPartyDES\obj\Release\ThirdPartyDES.dll
+E:\C#Projects\AssistTest\ThirdPartyDES\obj\Release\ThirdPartyDES.pdb

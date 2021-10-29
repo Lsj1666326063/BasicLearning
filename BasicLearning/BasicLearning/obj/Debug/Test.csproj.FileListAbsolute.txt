@@ -1,0 +1,9 @@
+E:\C#Projects\Test\Test\bin\Debug\Test.exe
+E:\C#Projects\Test\Test\bin\Debug\Test.pdb
+E:\C#Projects\Test\Test\bin\Debug\AssistTest.dll
+E:\C#Projects\Test\Test\bin\Debug\AssistTest.pdb
+E:\C#Projects\Test\Test\obj\Debug\Test.csprojAssemblyReference.cache
+E:\C#Projects\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+E:\C#Projects\Test\Test\obj\Debug\Test.csproj.CopyComplete
+E:\C#Projects\Test\Test\obj\Debug\Test.exe
+E:\C#Projects\Test\Test\obj\Debug\Test.pdb
