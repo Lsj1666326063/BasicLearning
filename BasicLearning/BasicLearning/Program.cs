@@ -11,10 +11,14 @@ namespace BasicLearning
         public static void Main(string[] args)
         {
             config = new Config();
+
+            // Test1();
             
-            // BasicLearning();
             
-            // DataStructed_MyArrayListTest();
+            // DataStructure_MyArrayListTest();
+
+            DataStructure_SparseArrayTest();
+            
             
             // GoF_Create_SimpleFactoryTest();
 
@@ -26,7 +30,7 @@ namespace BasicLearning
 
             // GoF_Create_BuilderTest();
 
-            GoF_Struct_AdapterTest();
+            // GoF_Struct_AdapterTest();
             
             Console.ReadLine();
         }
@@ -45,9 +49,15 @@ namespace BasicLearning
             Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
         }
 
-        private static void DataStructed_MyArrayListTest()
+        private static void DataStructure_MyArrayListTest()
         {
             MyArrayList<int> mArrList = new MyArrayList<int>();
+        }
+
+        private static void DataStructure_SparseArrayTest()
+        {
+            // SparseArray.Test1();
+            SparseArray.Test2();
         }
 
         private static void GoF_Create_SimpleFactoryTest()

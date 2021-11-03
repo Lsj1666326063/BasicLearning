@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="DataStructed\MyList.cs" />
+    <Compile Include="DataStructure\MyList.cs" />
+    <Compile Include="DataStructure\SparseArray.cs" />
     <Compile Include="GoF\AbstructFactory.cs" />
     <Compile Include="GoF\Adapter.cs" />
     <Compile Include="GoF\Builder.cs" />
@@ -65,7 +66,8 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Res\GlobalConfig.json" />
+    <Content Include="Res\DataStructure\DataStructureConfig.json" />
+    <Content Include="Res\GoF\GoFConfig.json" />
     <Content Include="ThirdParty\LitJson\AssemblyInfo.cs.in" />
     <Content Include="ThirdParty\LitJson\LitJSON.csproj" />
     <Content Include="ThirdParty\LitJson\litjson.png" />

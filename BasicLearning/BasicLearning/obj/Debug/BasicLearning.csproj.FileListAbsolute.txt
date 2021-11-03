@@ -1,0 +1,9 @@
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Debug\BasicLearning.exe
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Debug\BasicLearning.pdb
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Debug\AssistTest.dll
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Debug\AssistTest.pdb
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Debug\BasicLearning.csproj.AssemblyReference.cache
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Debug\BasicLearning.csproj.CoreCompileInputs.cache
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Debug\BasicLearning.csproj.CopyComplete
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Debug\BasicLearning.exe
+E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Debug\BasicLearning.pdb

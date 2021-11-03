@@ -7,7 +7,7 @@ namespace BasicLearning
     {
         private string projectPathStr;
         
-        private JsonData globalConfigData;
+        private JsonData gofConfigData;
         
         public Config()
         {
@@ -24,33 +24,41 @@ namespace BasicLearning
 
         private void LoadGlobalConfig()
         {
-            string globalConfigPathStr = projectPathStr + "\\Res\\GlobalConfig.json";
-            globalConfigData = JsonMapper.ToObject(File.ReadAllText(globalConfigPathStr));
+            string gofConfigPathStr = projectPathStr + "\\Res\\GoF\\GoFConfig.json";
+            gofConfigData = JsonMapper.ToObject(File.ReadAllText(gofConfigPathStr));
         }
+        
+        #region DataStructure
+        
+        #endregion
+
+        #region GoF
         
         public string GetSimpleFactory()
         {
-            return globalConfigData["SimpleFactory"].ToString();
+            return gofConfigData["SimpleFactory"].ToString();
         }
         
         public string GetFunFactory()
         {
-            return globalConfigData["FunFactory"].ToString();
+            return gofConfigData["FunFactory"].ToString();
         }
         
         public string GetAbstructFactory()
         {
-            return globalConfigData["AbstructFactory"].ToString();
+            return gofConfigData["AbstructFactory"].ToString();
         }
         
         public string GetBuilder()
         {
-            return globalConfigData["Builder"].ToString();
+            return gofConfigData["Builder"].ToString();
         }
         
         public string GetAdapter()
         {
-            return globalConfigData["Adapter"].ToString();
+            return gofConfigData["Adapter"].ToString();
         }
+        
+        #endregion
     }
 }
