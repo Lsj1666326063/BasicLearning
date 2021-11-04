@@ -1,9 +1,0 @@
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Release\BasicLearning.exe
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Release\BasicLearning.pdb
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Release\AssistTest.dll
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\bin\Release\AssistTest.pdb
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Release\BasicLearning.csproj.AssemblyReference.cache
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Release\BasicLearning.csproj.CoreCompileInputs.cache
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Release\BasicLearning.csproj.CopyComplete
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Release\BasicLearning.exe
-E:\C#Projects\BasicLearning\BasicLearning\BasicLearning\obj\Release\BasicLearning.pdb

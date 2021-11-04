@@ -1,9 +1,0 @@
-E:\C#Projects\Test\Test1\bin\Debug\Test1.exe
-E:\C#Projects\Test\Test1\bin\Debug\Test1.pdb
-E:\C#Projects\Test\Test1\obj\Debug\Test1.csprojAssemblyReference.cache
-E:\C#Projects\Test\Test1\obj\Debug\Test1.csproj.CoreCompileInputs.cache
-E:\C#Projects\Test\Test1\obj\Debug\Test1.exe
-E:\C#Projects\Test\Test1\obj\Debug\Test1.pdb
-E:\C#Projects\Test\Test1\obj\Debug\Test1.csproj.CopyComplete
-E:\C#Projects\Test\Test1\bin\Debug\AssistTest.dll
-E:\C#Projects\Test\Test1\bin\Debug\AssistTest.pdb
