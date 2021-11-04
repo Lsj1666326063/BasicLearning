@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using LitJson;
 
 namespace BasicLearning
@@ -46,7 +47,12 @@ namespace BasicLearning
             // };
             // Console.WriteLine($"a.GetLength(0) = {a.GetLength(0)} , a.GetLength(1) = {a.GetLength(1)}");
             
-            Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
+            // Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
+            
+            //-?(\d+)\.?(\d+)?
+            // Regex regex = new Regex(@"^(\w)+(\.\w)*@(\w)+((\.\w+)+)$");
+            string regexStr = @"-?(\d+)\.?(\d+)?";
+            MatchCollection mc = Regex.Matches("gjhgj11-2-121sdf-1231.1231sdfs0.11 0.00df", regexStr);
         }
 
         private static void DataStructure_MyArrayListTest()
