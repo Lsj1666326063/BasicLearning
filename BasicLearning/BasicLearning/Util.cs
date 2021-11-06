@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace BasicLearning
 {
-    public class Util
+    public static class Util
     {
         /// <summary>
         /// 反射实例化对象
