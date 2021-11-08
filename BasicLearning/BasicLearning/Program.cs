@@ -13,14 +13,14 @@ namespace BasicLearning
         {
             config = new Config();
 
-            // Test1();
+            Test1();
 
 
             // DataStructure_MyArrayListTest();
 
             // DataStructure_SparseArrayTest();
 
-            DataStructure_CircleArrayQueueTest();
+            // DataStructure_CircleArrayQueueTest();
 
 
             // GoF_Create_SimpleFactoryTest();
@@ -48,13 +48,33 @@ namespace BasicLearning
             //     {1, 2, 3, 4, 5}
             // };
             // Console.WriteLine($"a.GetLength(0) = {a.GetLength(0)} , a.GetLength(1) = {a.GetLength(1)}");
+            
 
             // Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
+            
 
-            //-?(\d+)\.?(\d+)?
-            // Regex regex = new Regex(@"^(\w)+(\.\w)*@(\w)+((\.\w+)+)$");
-            string regexStr = @"-?(\d+)\.?(\d+)?";
-            MatchCollection mc = Regex.Matches("gjhgj11-2-121sdf-1231.1231sdfs0.11 0.00df", regexStr);
+            // //-?(\d+)\.?(\d+)?
+            // // Regex regex = new Regex(@"^(\w)+(\.\w)*@(\w)+((\.\w+)+)$");
+            // string regexStr = @"(-?(\d+)(\.\d+)?)";
+            // string regexStr1 = @"-?(0|[1-9]\d*)(\.\d+)?";
+            // string test1 = "gjhgj11-2-121sdf-1231.1231sdfs0.11 0.00df";
+            // string test2 = "";
+            // string test3 = "sdfsdf";
+            // string test4 = "-sdfsdf";
+            // string test5 = "sd-fsdf";
+            // string test6 = ".sdfsdf";
+            // string test7 = "sd.fsdf";
+            // string test8 = "s-d.fsdf";
+            // string test9 = "s-d.5fsdf";
+            // string test10 = "s-d5.fsdf";
+            // string test11 = "s-5d.fsdf";
+            // string test12 = "s5-d.fsdf";
+            // MatchCollection mc = Regex.Matches(test10, regexStr);
+            // Console.WriteLine($"{mc[0].Value}");
+
+
+            // double val = 34.5;
+            // Console.WriteLine(val.ToString("0")); // 四舍五入
         }
 
         private static void DataStructure_MyArrayListTest()
