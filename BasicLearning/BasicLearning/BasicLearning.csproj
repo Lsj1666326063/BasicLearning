@@ -45,6 +45,7 @@
     <Compile Include="ConsoleUtil.cs" />
     <Compile Include="DataStructure\CircleArrayQueue.cs" />
     <Compile Include="DataStructure\MyList.cs" />
+    <Compile Include="DataStructure\SingleLinkedList.cs" />
     <Compile Include="DataStructure\SparseArray.cs" />
     <Compile Include="GoF\AbstructFactory.cs" />
     <Compile Include="GoF\Adapter.cs" />
