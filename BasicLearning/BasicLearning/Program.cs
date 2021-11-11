@@ -72,9 +72,18 @@ namespace BasicLearning
             // MatchCollection mc = Regex.Matches(test10, regexStr);
             // Console.WriteLine($"{mc[0].Value}");
 
+            // string test1 = "..1234.3.123...1.23...";
+            // string test2 = "...";
+            // Match match = Regex.Match(test1, @"\d+\.?\d+");
+            // MatchCollection mc = Regex.Matches(test1, @"\d+\.?\d+");
+            // Console.WriteLine($"{match.Value}");
 
+            
             // double val = 34.5;
             // Console.WriteLine(val.ToString("0")); // 四舍五入
+            
+            
+            // Console.WriteLine($"{-1%6}");
         }
 
         private static void DataStructure_MyArrayListTest()

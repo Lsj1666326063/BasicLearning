@@ -6,12 +6,18 @@
 
         public SingleLinkedList()
         {
-            head = new HeroNode(-1, "", "");
+            head = new HeroNode(0, "", "");
         }
 
         public void Add(HeroNode item)
         {
-            
+            HeroNode temp = head;
+            while (true)
+            {
+                if (temp.Next == null)
+                    break;
+                if(temp.Next.Id)
+            }
         }
         
     }
