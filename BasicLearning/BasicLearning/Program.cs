@@ -5,6 +5,10 @@ using LitJson;
 
 namespace BasicLearning
 {
+    public enum Test
+    {
+        test = 0
+    }
     internal class Program
     {
         private static Config config;
@@ -13,7 +17,7 @@ namespace BasicLearning
         {
             config = new Config();
 
-            Test1();
+            // Test1();
 
 
             // DataStructure_MyArrayListTest();
@@ -84,6 +88,9 @@ namespace BasicLearning
             
             
             // Console.WriteLine($"{-1%6}");
+            
+            // int a = -1;
+            // Console.WriteLine($"{((Test)a).ToString()}");
         }
 
         private static void DataStructure_MyArrayListTest()
@@ -169,6 +176,11 @@ namespace BasicLearning
                         break;
                 }
             }
+        }
+
+        private static void DataStructure_SingleLinkedListTest()
+        {
+            
         }
 
         private static void GoF_Create_SimpleFactoryTest()
