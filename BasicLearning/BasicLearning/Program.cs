@@ -9,7 +9,7 @@ namespace BasicLearning
     {
         test = 0
     }
-    internal class Program
+    internal partial class Program
     {
         private static Config config;
 
@@ -25,6 +25,8 @@ namespace BasicLearning
             // DataStructure_SparseArrayTest();
 
             // DataStructure_CircleArrayQueueTest();
+            
+            DataStructure_SingleLinkedListTest();
 
 
             // GoF_Create_SimpleFactoryTest();
@@ -180,7 +182,86 @@ namespace BasicLearning
 
         private static void DataStructure_SingleLinkedListTest()
         {
+            HeroNode node1 = new HeroNode(1,"a","A");
+            HeroNode node2 = new HeroNode(2,"b","B");
+            HeroNode node3 = new HeroNode(3,"c","C");
+            HeroNode node4 = new HeroNode(4,"d","D");
             
+            SingleLinkedList singleLinkedList = new SingleLinkedList();
+            singleLinkedList.Remove(5);
+            
+            // singleLinkedList.Add(node1);
+            // singleLinkedList.Add(node3);
+            // singleLinkedList.Add(node2);
+            // singleLinkedList.Add(node4);
+            singleLinkedList.AddAndSortById(node1);
+            singleLinkedList.AddAndSortById(node2);
+            singleLinkedList.AddAndSortById(node3);
+            singleLinkedList.AddAndSortById(node4);
+            Console.WriteLine(singleLinkedList);
+            Console.WriteLine();
+            
+            singleLinkedList.Remove(2);
+            Console.WriteLine(singleLinkedList);
+            Console.WriteLine();
+            
+            // singleLinkedList.Add(node2);
+            singleLinkedList.AddAndSortById(node2);
+            Console.WriteLine(singleLinkedList);
+            Console.WriteLine();
+            
+            HeroNode newNode2 = new HeroNode(2,"B","b");
+            singleLinkedList.Update(newNode2);
+            Console.WriteLine(singleLinkedList);
+            Console.WriteLine();
+            
+            HeroNode n3 = singleLinkedList.Get(3);
+            Console.WriteLine(n3);
+            Console.WriteLine();
+            
+            singleLinkedList.Remove(5);
+            
+            // singleLinkedList.Add(node2);
+            singleLinkedList.AddAndSortById(node2);
+            Console.WriteLine(singleLinkedList);
+            Console.WriteLine();
+
+            HeroNode last2Node = singleLinkedList.GetByLastIndex(2);
+            Console.WriteLine($"倒数第2个元素" + last2Node);
+            HeroNode last3Node = singleLinkedList.GetByLastIndex(3);
+            Console.WriteLine($"倒数第3个元素" + last3Node);
+            HeroNode last4Node = singleLinkedList.GetByLastIndex(4);
+            Console.WriteLine($"倒数第4个元素" + last4Node);
+            HeroNode last5Node = singleLinkedList.GetByLastIndex(5);
+            Console.WriteLine($"倒数第5个元素" + last5Node);
+            Console.WriteLine();
+            
+            singleLinkedList.Reversal();
+            Console.WriteLine($"反转后的链表元素\r\n" + singleLinkedList);
+            Console.WriteLine();
+            
+            
+            SingleLinkedList mergeSingleLinkedList1 = new SingleLinkedList();
+            HeroNode mergeNode1 = new HeroNode(1,"a","A");
+            HeroNode mergeNode2 = new HeroNode(2,"b","B");
+            HeroNode mergeNode3 = new HeroNode(3,"c","C");
+            mergeSingleLinkedList1.Add(mergeNode2);
+            mergeSingleLinkedList1.Add(mergeNode1);
+            mergeSingleLinkedList1.Add(mergeNode3);
+            SingleLinkedList mergeSingleLinkedList2 = new SingleLinkedList();
+            HeroNode mergeNode4 = new HeroNode(4,"d","D");
+            HeroNode mergeNode6 = new HeroNode(6,"f","F");
+            HeroNode mergeNode5 = new HeroNode(5,"e","E");
+            mergeSingleLinkedList2.Add(mergeNode4);
+            mergeSingleLinkedList2.Add(mergeNode6);
+            mergeSingleLinkedList2.Add(mergeNode5);
+            SingleLinkedList mergeList = MergeList(mergeSingleLinkedList1, mergeSingleLinkedList2);
+            ConsoleUtil.WriteLine($"mergeSingleLinkedList1",ConsoleColor.Green);
+            Console.WriteLine(mergeSingleLinkedList1);
+            ConsoleUtil.WriteLine($"mergeSingleLinkedList2",ConsoleColor.Green);
+            Console.WriteLine(mergeSingleLinkedList2);
+            ConsoleUtil.WriteLine($"mergeList",ConsoleColor.Green);
+            Console.WriteLine(mergeList);
         }
 
         private static void GoF_Create_SimpleFactoryTest()
