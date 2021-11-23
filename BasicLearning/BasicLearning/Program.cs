@@ -26,7 +26,7 @@ namespace BasicLearning
 
             // DataStructure_CircleArrayQueueTest();
             
-            DataStructure_SingleLinkedListTest();
+            // DataStructure_SingleLinkedListTest();
 
 
             // GoF_Create_SimpleFactoryTest();
@@ -40,6 +40,8 @@ namespace BasicLearning
             // GoF_Create_BuilderTest();
 
             // GoF_Struct_AdapterTest();
+
+            // GoF_Struct_BridgeTest();
 
             Console.ReadLine();
         }
@@ -322,6 +324,16 @@ namespace BasicLearning
             string userInfo = "用户数据";
             dbOpt.SaveUserInfo(userInfo);
             dbOpt.GetUserInfo();
+        }
+
+        private static void GoF_Struct_BridgeTest()
+        {
+            string dbDataObjTypeName = config.GetBridgeConcreteImplementor();
+            DbData dbData = (DbData) Util.ReflectionInstance(dbDataObjTypeName);
+            string dbDataFileObjTypeName = config.GetBridgeRefinedAbstraction();
+            DbDataFile dbDataFile = (DbDataFile) Util.ReflectionInstance(dbDataFileObjTypeName);
+            dbDataFile.SetDb(dbData);
+            dbDataFile.DbDataToFile();
         }
     }
 }

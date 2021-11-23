@@ -47,6 +47,7 @@ namespace BasicLearning
             return newList;
         }
     }
+    
     public class SingleLinkedList
     {
         public HeroNode Head => head;

@@ -3,5 +3,7 @@
   "FunFactory":"JpgPictureReaderFactory",
   "AbstructFactory":"AndroidSystemFactory",
   "Builder":"FullVideoInterfaceBuilder",
-  "Adapter":"ClassAdapter"
+  "Adapter":"ClassAdapter",
+  "BridgeConcreteImplementor":"MongoDbData",
+  "BridgeRefinedAbstraction":"PdfDbDataFile"
 }

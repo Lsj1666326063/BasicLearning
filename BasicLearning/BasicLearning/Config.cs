@@ -27,10 +27,6 @@ namespace BasicLearning
             string gofConfigPathStr = projectPathStr + "\\Res\\GoF\\GoFConfig.json";
             gofConfigData = JsonMapper.ToObject(File.ReadAllText(gofConfigPathStr));
         }
-        
-        #region DataStructure
-        
-        #endregion
 
         #region GoF
         
@@ -57,6 +53,16 @@ namespace BasicLearning
         public string GetAdapter()
         {
             return gofConfigData["Adapter"].ToString();
+        }
+        
+        public string GetBridgeConcreteImplementor()
+        {
+            return gofConfigData["BridgeConcreteImplementor"].ToString();
+        }
+
+        public string GetBridgeRefinedAbstraction()
+        {
+            return gofConfigData["BridgeRefinedAbstraction"].ToString();
         }
         
         #endregion

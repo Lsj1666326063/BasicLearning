@@ -49,6 +49,7 @@
     <Compile Include="DataStructure\SparseArray.cs" />
     <Compile Include="GoF\AbstructFactory.cs" />
     <Compile Include="GoF\Adapter.cs" />
+    <Compile Include="GoF\Bridge.cs" />
     <Compile Include="GoF\Builder.cs" />
     <Compile Include="GoF\FunFactory.cs" />
     <Compile Include="GoF\Prototype.cs" />
