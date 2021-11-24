@@ -43,6 +43,8 @@ namespace BasicLearning
 
             // GoF_Struct_BridgeTest();
 
+            GoF_Struct_Composite();
+
             Console.ReadLine();
         }
 
@@ -334,6 +336,78 @@ namespace BasicLearning
             DbDataFile dbDataFile = (DbDataFile) Util.ReflectionInstance(dbDataFileObjTypeName);
             dbDataFile.SetDb(dbData);
             dbDataFile.DbDataToFile();
+        }
+
+        private static void GoF_Struct_Composite()
+        {
+            #region 透明组合
+            // Widget root = new MultiWidget();
+            //
+            // // 创建按钮，添加到根节点
+            // Widget button = new Button();
+            // button.AddChild(null);
+            // root.AddChild(button);
+            //
+            // // 创建面板 给面板添加 一个文本 一个按钮，添加到根节点
+            // Widget panel = new Panel();
+            // Widget panelText = new Text();
+            // Widget panelButton = new Button();
+            // panel.AddChild(panelText);
+            // panel.AddChild(panelButton);
+            // root.AddChild(panel);
+            //
+            // // 创建文本，添加到根节点
+            // Widget text = new Text();
+            // root.AddChild(text);
+            //
+            // // 创建窗口 给窗口添加 一个文本 一个按钮，添加到根节点
+            // Widget window = new Window();
+            // Widget windowText = new Text();
+            // Widget windowButton = new Button();
+            // window.AddChild(windowText);
+            // window.AddChild(windowButton);
+            // root.AddChild(window);
+            //
+            // ConsoleUtil.WriteLine($"显示根节点下所有节点", ConsoleColor.Green);
+            // root.Show();
+            //
+            // ConsoleUtil.WriteLine($"隐藏窗口节点下所有节点", ConsoleColor.Green);
+            // window.Hide();
+            #endregion
+            
+            #region 安全组合
+            MultiWidget root = new MultiWidget();
+            
+            // 创建按钮，添加到根节点
+            Widget button = new Button();
+            root.AddChild(button);
+            
+            // 创建面板 给面板添加 一个文本 一个按钮，添加到根节点
+            MultiWidget panel = new Panel();
+            Widget panelText = new Text();
+            Widget panelButton = new Button();
+            panel.AddChild(panelText);
+            panel.AddChild(panelButton);
+            root.AddChild(panel);
+            
+            // 创建文本，添加到根节点
+            Widget text = new Text();
+            root.AddChild(text);
+            
+            // 创建窗口 给窗口添加 一个文本 一个按钮，添加到根节点
+            MultiWidget window = new Window();
+            Widget windowText = new Text();
+            Widget windowButton = new Button();
+            window.AddChild(windowText);
+            window.AddChild(windowButton);
+            root.AddChild(window);
+            
+            ConsoleUtil.WriteLine($"显示根节点下所有节点", ConsoleColor.Green);
+            root.Show();
+            
+            ConsoleUtil.WriteLine($"隐藏窗口节点下所有节点", ConsoleColor.Green);
+            window.Hide();
+            #endregion
         }
     }
 }
