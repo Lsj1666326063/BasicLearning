@@ -65,6 +65,11 @@ namespace BasicLearning
             return gofConfigData["BridgeRefinedAbstraction"].ToString();
         }
         
+        public string GetFacade()
+        {
+            return gofConfigData["Facade"].ToString();
+        }
+        
         #endregion
     }
 }

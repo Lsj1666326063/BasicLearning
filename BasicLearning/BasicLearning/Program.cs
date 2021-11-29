@@ -47,6 +47,8 @@ namespace BasicLearning
 
             // GoF_Struct_Decorator();
 
+            // GoF_Struct_Facade();
+
             Console.ReadLine();
         }
 
@@ -453,6 +455,13 @@ namespace BasicLearning
             moduloEncrypt.ModEncryption(result1);
             ConsoleUtil.WriteLine($"思考题：半透明装饰模式 对一个对象进行多次装饰，通过最终装饰出来的对象是调用不到上一个具体装饰类对象中的装饰方法的",ConsoleColor.Green);
             #endregion
+        }
+
+        private static void GoF_Struct_Facade()
+        {
+            string facadeObjTypeName = config.GetFacade();
+            AbstractOnFacade facade = (AbstractOnFacade) Util.ReflectionInstance(facadeObjTypeName);
+            facade.On();
         }
     }
 }

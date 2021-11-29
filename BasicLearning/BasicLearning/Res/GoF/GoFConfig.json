@@ -5,5 +5,6 @@
   "Builder":"FullVideoInterfaceBuilder",
   "Adapter":"ClassAdapter",
   "BridgeConcreteImplementor":"MongoDbData",
-  "BridgeRefinedAbstraction":"PdfDbDataFile"
+  "BridgeRefinedAbstraction":"PdfDbDataFile",
+  "Facade":"MacOnFacade"
 }
