@@ -43,7 +43,9 @@ namespace BasicLearning
 
             // GoF_Struct_BridgeTest();
 
-            GoF_Struct_Composite();
+            // GoF_Struct_Composite();
+
+            // GoF_Struct_Decorator();
 
             Console.ReadLine();
         }
@@ -407,6 +409,49 @@ namespace BasicLearning
             
             ConsoleUtil.WriteLine($"隐藏窗口节点下所有节点", ConsoleColor.Green);
             window.Hide();
+            #endregion
+        }
+
+        private static void GoF_Struct_Decorator()
+        {
+            string data = "aaa";
+            
+            #region 透明装饰模式
+            // Encrypt gressionEncrypt = new GressionEncrypt();
+            // gressionEncrypt.Encryption(data);
+            //
+            // ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
+            //
+            // Encrypt reverseOutPutEncrypt = new ReverseOutPutEncrypt(gressionEncrypt);
+            // reverseOutPutEncrypt.Encryption(data);
+            //
+            // ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
+            //
+            // Encrypt moduloEncrypt = new ModEncrypt(reverseOutPutEncrypt);
+            // moduloEncrypt.Encryption(data);
+            #endregion
+            
+            /*
+             * 思考题
+                为什么半透明装饰模式不能实现对同一个对象的多次装饰？
+             */
+            #region 半透明装饰模式
+            Encrypt gressionEncrypt = new GressionEncrypt();
+            gressionEncrypt.Encryption(data);
+            
+            ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
+            
+            ReverseOutPutEncrypt reverseOutPutEncrypt = new ReverseOutPutEncrypt(gressionEncrypt);
+            string result = reverseOutPutEncrypt.Encryption(data);
+            reverseOutPutEncrypt.ReverseOutPutEncryption(result);
+            
+            ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
+            
+            ModEncrypt moduloEncrypt = new ModEncrypt(reverseOutPutEncrypt);
+            string result1 = moduloEncrypt.Encryption(data);
+            // 只能通过reverseOutPutEncrypt.ReverseOutPutEncryption(result1);才能将对象装饰成ReverseOutPutEncrypt，才能再通过装饰后的结果装饰为ModEncrypt
+            moduloEncrypt.ModEncryption(result1);
+            ConsoleUtil.WriteLine($"思考题：半透明装饰模式 对一个对象进行多次装饰，通过最终装饰出来的对象是调用不到上一个具体装饰类对象中的装饰方法的",ConsoleColor.Green);
             #endregion
         }
     }
