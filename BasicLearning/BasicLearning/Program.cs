@@ -49,6 +49,8 @@ namespace BasicLearning
 
             // GoF_Struct_Facade();
 
+            // GoF_Struct_Flyweight();
+
             Console.ReadLine();
         }
 
@@ -462,6 +464,29 @@ namespace BasicLearning
             string facadeObjTypeName = config.GetFacade();
             AbstractOnFacade facade = (AbstractOnFacade) Util.ReflectionInstance(facadeObjTypeName);
             facade.On();
+        }
+
+        private static void GoF_Struct_Flyweight()
+        {
+            MultiMediaFactory pictureFactory = new PictureFactory();
+            MultiMediaFactory animateFactory = new AnimateFactory();
+            MultiMediaFactory videoFactory = new VideoFactory();
+
+            MultiMediaFlyweight picture1 = pictureFactory.Create("p1");
+            MultiMediaFlyweight picture2 = pictureFactory.Create("p2");
+            MultiMediaFlyweight picture3 = pictureFactory.Create("p1");
+            Console.WriteLine($"picture1 == picture3 ：{picture1 == picture3}");
+            
+            MultiMediaFlyweight animate1 = animateFactory.Create("a1");
+            
+            MultiMediaFlyweight video1 = videoFactory.Create("v1");
+            
+            Document document = new Document();
+            document.InsertMultiMedia(new DocMediaTransform(5,3), picture1);
+            document.InsertMultiMedia(new DocMediaTransform(7,5), picture2);
+            document.InsertMultiMedia(new DocMediaTransform(2,4), picture3);
+            document.InsertMultiMedia(new DocMediaTransform(0,9), animate1);
+            document.InsertMultiMedia(new DocMediaTransform(9,1), video1);
         }
     }
 }
