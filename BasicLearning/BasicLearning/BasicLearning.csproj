@@ -57,6 +57,7 @@
     <Compile Include="GoF\Flyweight.cs" />
     <Compile Include="GoF\FunFactory.cs" />
     <Compile Include="GoF\Prototype.cs" />
+    <Compile Include="GoF\Proxy.cs" />
     <Compile Include="GoF\SimpleFactory.cs" />
     <Compile Include="GoF\Singleton.cs" />
     <Compile Include="Program.cs" />

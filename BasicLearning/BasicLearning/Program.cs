@@ -51,6 +51,8 @@ namespace BasicLearning
 
             // GoF_Struct_Flyweight();
 
+            // GoF_Struct_Proxy();
+
             Console.ReadLine();
         }
 
@@ -487,6 +489,12 @@ namespace BasicLearning
             document.InsertMultiMedia(new DocMediaTransform(2,4), picture3);
             document.InsertMultiMedia(new DocMediaTransform(0,9), animate1);
             document.InsertMultiMedia(new DocMediaTransform(9,1), video1);
+        }
+
+        private static void GoF_Struct_Proxy()
+        {
+            ICompany company = new GameCompanyProxy();
+            company.SubmitResume("Name=qqq Age=18 Post=Programmer");
         }
     }
 }
