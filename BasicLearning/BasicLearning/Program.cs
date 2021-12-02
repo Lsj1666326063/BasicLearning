@@ -53,6 +53,8 @@ namespace BasicLearning
 
             // GoF_Struct_Proxy();
 
+            // Gof_Behavior_ChainOfResponsibility();
+
             Console.ReadLine();
         }
 
@@ -495,6 +497,24 @@ namespace BasicLearning
         {
             ICompany company = new GameCompanyProxy();
             company.SubmitResume("Name=qqq Age=18 Post=Programmer");
+        }
+
+        private static void Gof_Behavior_ChainOfResponsibility()
+        {
+            LeaveHandler directorLeaveHandler = new Director();
+            LeaveHandler managerLeaveHandler = new Manager();
+            LeaveHandler generalManagerLeaveHandler = new GeneralManager();
+            
+            directorLeaveHandler.SetNextHandler(managerLeaveHandler);
+            managerLeaveHandler.SetNextHandler(generalManagerLeaveHandler);
+            
+            directorLeaveHandler.Handler(2);
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            directorLeaveHandler.Handler(15);
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            directorLeaveHandler.Handler(8);
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            directorLeaveHandler.Handler(30);
         }
     }
 }
