@@ -52,6 +52,7 @@
     <Compile Include="GoF\Bridge.cs" />
     <Compile Include="GoF\Builder.cs" />
     <Compile Include="GoF\ChainOfResponsibility.cs" />
+    <Compile Include="GoF\Command.cs" />
     <Compile Include="GoF\Composite.cs" />
     <Compile Include="GoF\Decorator.cs" />
     <Compile Include="GoF\Facade.cs" />

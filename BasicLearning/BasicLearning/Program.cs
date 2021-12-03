@@ -55,6 +55,8 @@ namespace BasicLearning
 
             // Gof_Behavior_ChainOfResponsibility();
 
+            // Gof_Behavior_Command();
+
             Console.ReadLine();
         }
 
@@ -105,8 +107,16 @@ namespace BasicLearning
             
             // Console.WriteLine($"{-1%6}");
             
+            
             // int a = -1;
             // Console.WriteLine($"{((Test)a).ToString()}");
+            
+            
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine("111");
+            // Console.WriteLine("222");
+            // Console.ResetColor();
+            // Console.WriteLine("333");
         }
 
         private static void DataStructure_MyArrayListTest()
@@ -515,6 +525,68 @@ namespace BasicLearning
             directorLeaveHandler.Handler(8);
             ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
             directorLeaveHandler.Handler(30);
+        }
+
+        private static void Gof_Behavior_Command()
+        {
+            #region 练习1
+            
+            // Console.WriteLine($"命令模式测试");
+            // Console.WriteLine($"KeyCode：A  加一个数");
+            // Console.WriteLine($"KeyCode：S  撤销");
+            // Console.WriteLine($"KeyCode：D  恢复");
+            // Console.WriteLine($"KeyCode：W  查看结果");
+            // Console.WriteLine($"KeyCode：Q  结束测试\n");
+            //
+            // Calculator calculator = new Calculator();
+            // calculator.SetCommand(new AddCommand());
+            //
+            // bool test = true;
+            // while (test)
+            // {
+            //     switch (Console.ReadKey().Key)
+            //     {
+            //         case ConsoleKey.A:
+            //             Console.WriteLine();
+            //             ConsoleUtil.Write($"输入一个正整数 ", ConsoleColor.Green);
+            //             string valueStr = Console.ReadLine();
+            //             int value = int.Parse(valueStr);
+            //             calculator.Compute(value);
+            //             break;
+            //         case ConsoleKey.S:
+            //             ConsoleUtil.WriteLine($"撤销一步 ", ConsoleColor.Green);
+            //             calculator.Undo();
+            //             break;
+            //         case ConsoleKey.D:
+            //             ConsoleUtil.WriteLine($"恢复一步 ", ConsoleColor.Green);
+            //             calculator.Redo();
+            //             break;
+            //         case ConsoleKey.W:
+            //             ConsoleUtil.WriteLine($"查看结果 ", ConsoleColor.Green);
+            //             Console.WriteLine(calculator.Result.ToString());
+            //             break;
+            //         case ConsoleKey.Q:
+            //             Console.WriteLine();
+            //             Console.WriteLine($"结束测试");
+            //             test = false;
+            //             break;
+            //     }
+            // }
+            
+            #endregion
+            
+            #region 练习2
+            
+            Menu menu = new Menu();
+            menu.CreateMenu.OnClick();
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            menu.OpenMenu.OnClick();
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            menu.EditMenu.OnClick();
+            ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
+            menu.MacroMenu.OnClick();
+            
+            #endregion
         }
     }
 }
