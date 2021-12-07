@@ -28,6 +28,8 @@ namespace BasicLearning
             
             // DataStructure_SingleLinkedListTest();
 
+            // DataStructure_DoubleLinkedListTest();
+
 
             // GoF_Create_SimpleFactoryTest();
 
@@ -286,6 +288,57 @@ namespace BasicLearning
             Console.WriteLine(mergeSingleLinkedList2);
             ConsoleUtil.WriteLine($"mergeList",ConsoleColor.Green);
             Console.WriteLine(mergeList);
+        }
+
+        private static void DataStructure_DoubleLinkedListTest()
+        {
+            HeroNode2 node1 = new HeroNode2(1,"a","A");
+            HeroNode2 node2 = new HeroNode2(2,"b","B");
+            HeroNode2 node3 = new HeroNode2(3,"c","C");
+            HeroNode2 node4 = new HeroNode2(4,"d","D");
+            
+            DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+            doubleLinkedList.Remove(5);
+            
+            // doubleLinkedList.Add(node1);
+            // doubleLinkedList.Add(node3);
+            // doubleLinkedList.Add(node2);
+            // doubleLinkedList.Add(node4);
+            doubleLinkedList.AddAndSortById(node1);
+            doubleLinkedList.AddAndSortById(node2);
+            doubleLinkedList.AddAndSortById(node3);
+            doubleLinkedList.AddAndSortById(node4);
+            Console.WriteLine(doubleLinkedList);
+            Console.WriteLine();
+            
+            doubleLinkedList.Remove(2);
+            Console.WriteLine(doubleLinkedList);
+            Console.WriteLine();
+            
+            // doubleLinkedList.Add(node2);
+            doubleLinkedList.AddAndSortById(node2);
+            Console.WriteLine(doubleLinkedList);
+            Console.WriteLine();
+            
+            HeroNode2 newNode2 = new HeroNode2(2,"B","b");
+            doubleLinkedList.Update(newNode2);
+            Console.WriteLine(doubleLinkedList);
+            Console.WriteLine();
+            
+            HeroNode2 n3 = doubleLinkedList.Get(3);
+            Console.WriteLine(n3);
+            Console.WriteLine($"Pre:{n3.Pre}");
+            Console.WriteLine($"Next:{n3.Next}");
+            Console.WriteLine();
+            
+            doubleLinkedList.Remove(5);
+            
+            // doubleLinkedList.Add(node2);
+            doubleLinkedList.AddAndSortById(node2);
+            Console.WriteLine(doubleLinkedList);
+            Console.WriteLine();
+            
+            doubleLinkedList.ReversalLog();
         }
 
         private static void GoF_Create_SimpleFactoryTest()

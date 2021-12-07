@@ -44,6 +44,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="ConsoleUtil.cs" />
     <Compile Include="DataStructure\CircleArrayQueue.cs" />
+    <Compile Include="DataStructure\DoubleLinkedList.cs" />
     <Compile Include="DataStructure\MyList.cs" />
     <Compile Include="DataStructure\SingleLinkedList.cs" />
     <Compile Include="DataStructure\SparseArray.cs" />

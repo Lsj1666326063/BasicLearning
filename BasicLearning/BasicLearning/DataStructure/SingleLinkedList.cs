@@ -48,6 +48,7 @@ namespace BasicLearning
         }
     }
     
+    // 单向链表
     public class SingleLinkedList
     {
         public HeroNode Head => head;
