@@ -59,6 +59,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Command();
 
+            Gof_Behavior_Interpreter();
+
             Console.ReadLine();
         }
 
@@ -119,6 +121,10 @@ namespace BasicLearning
             // Console.WriteLine("222");
             // Console.ResetColor();
             // Console.WriteLine("333");
+
+
+            if (int.TryParse("-1", out int result))
+                ConsoleUtil.WriteLine($"{result}", ConsoleColor.Green);
         }
 
         private static void DataStructure_MyArrayListTest()
@@ -640,6 +646,17 @@ namespace BasicLearning
             menu.MacroMenu.OnClick();
             
             #endregion
+        }
+
+        private static void Gof_Behavior_Interpreter()
+        {
+            MathExpressionParse mathExpressionParse = new MathExpressionParse();
+            IMathExpression mathExpression = mathExpressionParse.Parse("1 + 20 + 3 - 4 + 1");
+            ConsoleUtil.WriteLine($"1 + 20 + 3 - 4 + 1 = {mathExpression.Result()}", ConsoleColor.Green);
+            
+            DBExpressionParse dbExpressionParse = new DBExpressionParse();
+            IDBExpression dbExpression = dbExpressionParse.Parse("COPY VIEW FROM srcDB TO desDB AND MOVE TABLE Student FROM srcDB TO desDB");
+            ConsoleUtil.WriteLine($"COPY VIEW FROM srcDB TO desDB AND MOVE TABLE Student FROM srcDB TO desDB = {dbExpression.Interpreter()}", ConsoleColor.Green);
         }
     }
 }
