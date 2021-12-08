@@ -59,7 +59,7 @@ namespace BasicLearning
 
             // Gof_Behavior_Command();
 
-            Gof_Behavior_Interpreter();
+            // Gof_Behavior_Interpreter();
 
             Console.ReadLine();
         }
