@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
 using LitJson;
@@ -9,6 +10,7 @@ namespace BasicLearning
     {
         test = 0
     }
+
     internal partial class Program
     {
         private static Config config;
@@ -25,7 +27,7 @@ namespace BasicLearning
             // DataStructure_SparseArrayTest();
 
             // DataStructure_CircleArrayQueueTest();
-            
+
             // DataStructure_SingleLinkedListTest();
 
             // DataStructure_DoubleLinkedListTest();
@@ -61,6 +63,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Interpreter();
 
+            // Gof_Behavior_Iterator();
+
             Console.ReadLine();
         }
 
@@ -74,10 +78,10 @@ namespace BasicLearning
             //     {1, 2, 3, 4, 5}
             // };
             // Console.WriteLine($"a.GetLength(0) = {a.GetLength(0)} , a.GetLength(1) = {a.GetLength(1)}");
-            
+
 
             // Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
-            
+
 
             // //-?(\d+)\.?(\d+)?
             // // Regex regex = new Regex(@"^(\w)+(\.\w)*@(\w)+((\.\w+)+)$");
@@ -104,18 +108,18 @@ namespace BasicLearning
             // MatchCollection mc = Regex.Matches(test1, @"\d+\.?\d+");
             // Console.WriteLine($"{match.Value}");
 
-            
+
             // double val = 34.5;
             // Console.WriteLine(val.ToString("0")); // 四舍五入
-            
-            
+
+
             // Console.WriteLine($"{-1%6}");
-            
-            
+
+
             // int a = -1;
             // Console.WriteLine($"{((Test)a).ToString()}");
-            
-            
+
+
             // Console.ForegroundColor = ConsoleColor.Red;
             // Console.WriteLine("111");
             // Console.WriteLine("222");
@@ -151,7 +155,7 @@ namespace BasicLearning
             Console.WriteLine($"KeyCode：W  查看队列信息(ToString)");
             Console.WriteLine($"KeyCode：Q  结束测试 End While\n");
 
-            CircleArrayQueue circleArrayQueue = new CircleArrayQueue(/*3*/);
+            CircleArrayQueue circleArrayQueue = new CircleArrayQueue( /*3*/);
             bool test = true;
             while (test)
             {
@@ -214,14 +218,14 @@ namespace BasicLearning
 
         private static void DataStructure_SingleLinkedListTest()
         {
-            HeroNode node1 = new HeroNode(1,"a","A");
-            HeroNode node2 = new HeroNode(2,"b","B");
-            HeroNode node3 = new HeroNode(3,"c","C");
-            HeroNode node4 = new HeroNode(4,"d","D");
-            
+            HeroNode node1 = new HeroNode(1, "a", "A");
+            HeroNode node2 = new HeroNode(2, "b", "B");
+            HeroNode node3 = new HeroNode(3, "c", "C");
+            HeroNode node4 = new HeroNode(4, "d", "D");
+
             SingleLinkedList singleLinkedList = new SingleLinkedList();
             singleLinkedList.Remove(5);
-            
+
             // singleLinkedList.Add(node1);
             // singleLinkedList.Add(node3);
             // singleLinkedList.Add(node2);
@@ -232,27 +236,27 @@ namespace BasicLearning
             singleLinkedList.AddAndSortById(node4);
             Console.WriteLine(singleLinkedList);
             Console.WriteLine();
-            
+
             singleLinkedList.Remove(2);
             Console.WriteLine(singleLinkedList);
             Console.WriteLine();
-            
+
             // singleLinkedList.Add(node2);
             singleLinkedList.AddAndSortById(node2);
             Console.WriteLine(singleLinkedList);
             Console.WriteLine();
-            
-            HeroNode newNode2 = new HeroNode(2,"B","b");
+
+            HeroNode newNode2 = new HeroNode(2, "B", "b");
             singleLinkedList.Update(newNode2);
             Console.WriteLine(singleLinkedList);
             Console.WriteLine();
-            
+
             HeroNode n3 = singleLinkedList.Get(3);
             Console.WriteLine(n3);
             Console.WriteLine();
-            
+
             singleLinkedList.Remove(5);
-            
+
             // singleLinkedList.Add(node2);
             singleLinkedList.AddAndSortById(node2);
             Console.WriteLine(singleLinkedList);
@@ -267,45 +271,45 @@ namespace BasicLearning
             HeroNode last5Node = singleLinkedList.GetByLastIndex(5);
             Console.WriteLine($"倒数第5个元素" + last5Node);
             Console.WriteLine();
-            
+
             singleLinkedList.Reversal();
             Console.WriteLine($"反转后的链表元素\r\n" + singleLinkedList);
             Console.WriteLine();
-            
-            
+
+
             SingleLinkedList mergeSingleLinkedList1 = new SingleLinkedList();
-            HeroNode mergeNode1 = new HeroNode(1,"a","A");
-            HeroNode mergeNode2 = new HeroNode(2,"b","B");
-            HeroNode mergeNode3 = new HeroNode(3,"c","C");
+            HeroNode mergeNode1 = new HeroNode(1, "a", "A");
+            HeroNode mergeNode2 = new HeroNode(2, "b", "B");
+            HeroNode mergeNode3 = new HeroNode(3, "c", "C");
             mergeSingleLinkedList1.Add(mergeNode2);
             mergeSingleLinkedList1.Add(mergeNode1);
             mergeSingleLinkedList1.Add(mergeNode3);
             SingleLinkedList mergeSingleLinkedList2 = new SingleLinkedList();
-            HeroNode mergeNode4 = new HeroNode(4,"d","D");
-            HeroNode mergeNode6 = new HeroNode(6,"f","F");
-            HeroNode mergeNode5 = new HeroNode(5,"e","E");
+            HeroNode mergeNode4 = new HeroNode(4, "d", "D");
+            HeroNode mergeNode6 = new HeroNode(6, "f", "F");
+            HeroNode mergeNode5 = new HeroNode(5, "e", "E");
             mergeSingleLinkedList2.Add(mergeNode4);
             mergeSingleLinkedList2.Add(mergeNode6);
             mergeSingleLinkedList2.Add(mergeNode5);
             SingleLinkedList mergeList = MergeList(mergeSingleLinkedList1, mergeSingleLinkedList2);
-            ConsoleUtil.WriteLine($"mergeSingleLinkedList1",ConsoleColor.Green);
+            ConsoleUtil.WriteLine($"mergeSingleLinkedList1", ConsoleColor.Green);
             Console.WriteLine(mergeSingleLinkedList1);
-            ConsoleUtil.WriteLine($"mergeSingleLinkedList2",ConsoleColor.Green);
+            ConsoleUtil.WriteLine($"mergeSingleLinkedList2", ConsoleColor.Green);
             Console.WriteLine(mergeSingleLinkedList2);
-            ConsoleUtil.WriteLine($"mergeList",ConsoleColor.Green);
+            ConsoleUtil.WriteLine($"mergeList", ConsoleColor.Green);
             Console.WriteLine(mergeList);
         }
 
         private static void DataStructure_DoubleLinkedListTest()
         {
-            HeroNode2 node1 = new HeroNode2(1,"a","A");
-            HeroNode2 node2 = new HeroNode2(2,"b","B");
-            HeroNode2 node3 = new HeroNode2(3,"c","C");
-            HeroNode2 node4 = new HeroNode2(4,"d","D");
-            
+            HeroNode2 node1 = new HeroNode2(1, "a", "A");
+            HeroNode2 node2 = new HeroNode2(2, "b", "B");
+            HeroNode2 node3 = new HeroNode2(3, "c", "C");
+            HeroNode2 node4 = new HeroNode2(4, "d", "D");
+
             DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
             doubleLinkedList.Remove(5);
-            
+
             // doubleLinkedList.Add(node1);
             // doubleLinkedList.Add(node3);
             // doubleLinkedList.Add(node2);
@@ -316,34 +320,34 @@ namespace BasicLearning
             doubleLinkedList.AddAndSortById(node4);
             Console.WriteLine(doubleLinkedList);
             Console.WriteLine();
-            
+
             doubleLinkedList.Remove(2);
             Console.WriteLine(doubleLinkedList);
             Console.WriteLine();
-            
+
             // doubleLinkedList.Add(node2);
             doubleLinkedList.AddAndSortById(node2);
             Console.WriteLine(doubleLinkedList);
             Console.WriteLine();
-            
-            HeroNode2 newNode2 = new HeroNode2(2,"B","b");
+
+            HeroNode2 newNode2 = new HeroNode2(2, "B", "b");
             doubleLinkedList.Update(newNode2);
             Console.WriteLine(doubleLinkedList);
             Console.WriteLine();
-            
+
             HeroNode2 n3 = doubleLinkedList.Get(3);
             Console.WriteLine(n3);
             Console.WriteLine($"Pre:{n3.Pre}");
             Console.WriteLine($"Next:{n3.Next}");
             Console.WriteLine();
-            
+
             doubleLinkedList.Remove(5);
-            
+
             // doubleLinkedList.Add(node2);
             doubleLinkedList.AddAndSortById(node2);
             Console.WriteLine(doubleLinkedList);
             Console.WriteLine();
-            
+
             doubleLinkedList.ReversalLog();
         }
 
@@ -420,6 +424,7 @@ namespace BasicLearning
         private static void GoF_Struct_Composite()
         {
             #region 透明组合
+
             // Widget root = new MultiWidget();
             //
             // // 创建按钮，添加到根节点
@@ -452,15 +457,17 @@ namespace BasicLearning
             //
             // ConsoleUtil.WriteLine($"隐藏窗口节点下所有节点", ConsoleColor.Green);
             // window.Hide();
+
             #endregion
-            
+
             #region 安全组合
+
             MultiWidget root = new MultiWidget();
-            
+
             // 创建按钮，添加到根节点
             Widget button = new Button();
             root.AddChild(button);
-            
+
             // 创建面板 给面板添加 一个文本 一个按钮，添加到根节点
             MultiWidget panel = new Panel();
             Widget panelText = new Text();
@@ -468,11 +475,11 @@ namespace BasicLearning
             panel.AddChild(panelText);
             panel.AddChild(panelButton);
             root.AddChild(panel);
-            
+
             // 创建文本，添加到根节点
             Widget text = new Text();
             root.AddChild(text);
-            
+
             // 创建窗口 给窗口添加 一个文本 一个按钮，添加到根节点
             MultiWidget window = new Window();
             Widget windowText = new Text();
@@ -480,20 +487,22 @@ namespace BasicLearning
             window.AddChild(windowText);
             window.AddChild(windowButton);
             root.AddChild(window);
-            
+
             ConsoleUtil.WriteLine($"显示根节点下所有节点", ConsoleColor.Green);
             root.Show();
-            
+
             ConsoleUtil.WriteLine($"隐藏窗口节点下所有节点", ConsoleColor.Green);
             window.Hide();
+
             #endregion
         }
 
         private static void GoF_Struct_Decorator()
         {
             string data = "aaa";
-            
+
             #region 透明装饰模式
+
             // Encrypt gressionEncrypt = new GressionEncrypt();
             // gressionEncrypt.Encryption(data);
             //
@@ -506,29 +515,33 @@ namespace BasicLearning
             //
             // Encrypt moduloEncrypt = new ModEncrypt(reverseOutPutEncrypt);
             // moduloEncrypt.Encryption(data);
+
             #endregion
-            
+
             /*
              * 思考题
                 为什么半透明装饰模式不能实现对同一个对象的多次装饰？
              */
+
             #region 半透明装饰模式
+
             Encrypt gressionEncrypt = new GressionEncrypt();
             gressionEncrypt.Encryption(data);
-            
-            ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
-            
+
+            ConsoleUtil.WriteLine($"--------------------------------------", ConsoleColor.Green);
+
             ReverseOutPutEncrypt reverseOutPutEncrypt = new ReverseOutPutEncrypt(gressionEncrypt);
             string result = reverseOutPutEncrypt.Encryption(data);
             reverseOutPutEncrypt.ReverseOutPutEncryption(result);
-            
-            ConsoleUtil.WriteLine($"--------------------------------------",ConsoleColor.Green);
-            
+
+            ConsoleUtil.WriteLine($"--------------------------------------", ConsoleColor.Green);
+
             ModEncrypt moduloEncrypt = new ModEncrypt(reverseOutPutEncrypt);
             string result1 = moduloEncrypt.Encryption(data);
             // 只能通过reverseOutPutEncrypt.ReverseOutPutEncryption(result1);才能将对象装饰成ReverseOutPutEncrypt，才能再通过装饰后的结果装饰为ModEncrypt
             moduloEncrypt.ModEncryption(result1);
-            ConsoleUtil.WriteLine($"思考题：半透明装饰模式 对一个对象进行多次装饰，通过最终装饰出来的对象是调用不到上一个具体装饰类对象中的装饰方法的",ConsoleColor.Green);
+            ConsoleUtil.WriteLine($"思考题：半透明装饰模式 对一个对象进行多次装饰，通过最终装饰出来的对象是调用不到上一个具体装饰类对象中的装饰方法的", ConsoleColor.Green);
+
             #endregion
         }
 
@@ -549,17 +562,17 @@ namespace BasicLearning
             MultiMediaFlyweight picture2 = pictureFactory.Create("p2");
             MultiMediaFlyweight picture3 = pictureFactory.Create("p1");
             Console.WriteLine($"picture1 == picture3 ：{picture1 == picture3}");
-            
+
             MultiMediaFlyweight animate1 = animateFactory.Create("a1");
-            
+
             MultiMediaFlyweight video1 = videoFactory.Create("v1");
-            
+
             Document document = new Document();
-            document.InsertMultiMedia(new DocMediaTransform(5,3), picture1);
-            document.InsertMultiMedia(new DocMediaTransform(7,5), picture2);
-            document.InsertMultiMedia(new DocMediaTransform(2,4), picture3);
-            document.InsertMultiMedia(new DocMediaTransform(0,9), animate1);
-            document.InsertMultiMedia(new DocMediaTransform(9,1), video1);
+            document.InsertMultiMedia(new DocMediaTransform(5, 3), picture1);
+            document.InsertMultiMedia(new DocMediaTransform(7, 5), picture2);
+            document.InsertMultiMedia(new DocMediaTransform(2, 4), picture3);
+            document.InsertMultiMedia(new DocMediaTransform(0, 9), animate1);
+            document.InsertMultiMedia(new DocMediaTransform(9, 1), video1);
         }
 
         private static void GoF_Struct_Proxy()
@@ -573,10 +586,10 @@ namespace BasicLearning
             LeaveHandler directorLeaveHandler = new Director();
             LeaveHandler managerLeaveHandler = new Manager();
             LeaveHandler generalManagerLeaveHandler = new GeneralManager();
-            
+
             directorLeaveHandler.SetNextHandler(managerLeaveHandler);
             managerLeaveHandler.SetNextHandler(generalManagerLeaveHandler);
-            
+
             directorLeaveHandler.Handler(2);
             ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
             directorLeaveHandler.Handler(15);
@@ -589,7 +602,7 @@ namespace BasicLearning
         private static void Gof_Behavior_Command()
         {
             #region 练习1
-            
+
             // Console.WriteLine($"命令模式测试");
             // Console.WriteLine($"KeyCode：A  加一个数");
             // Console.WriteLine($"KeyCode：S  撤销");
@@ -631,11 +644,11 @@ namespace BasicLearning
             //             break;
             //     }
             // }
-            
+
             #endregion
-            
+
             #region 练习2
-            
+
             Menu menu = new Menu();
             menu.CreateMenu.OnClick();
             ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
@@ -644,7 +657,7 @@ namespace BasicLearning
             menu.EditMenu.OnClick();
             ConsoleUtil.WriteLine($"-------------------------------------------", ConsoleColor.Green);
             menu.MacroMenu.OnClick();
-            
+
             #endregion
         }
 
@@ -653,10 +666,58 @@ namespace BasicLearning
             MathExpressionParse mathExpressionParse = new MathExpressionParse();
             IMathExpression mathExpression = mathExpressionParse.Parse("1 + 20 + 3 - 4 + 1");
             ConsoleUtil.WriteLine($"1 + 20 + 3 - 4 + 1 = {mathExpression.Result()}", ConsoleColor.Green);
-            
+
             DBExpressionParse dbExpressionParse = new DBExpressionParse();
             IDBExpression dbExpression = dbExpressionParse.Parse("COPY VIEW FROM srcDB TO desDB AND MOVE TABLE Student FROM srcDB TO desDB");
             ConsoleUtil.WriteLine($"COPY VIEW FROM srcDB TO desDB AND MOVE TABLE Student FROM srcDB TO desDB = {dbExpression.Interpreter()}", ConsoleColor.Green);
+        }
+
+        private static void Gof_Behavior_Iterator()
+        {
+            Student[] students = new Student[7];
+            students[0] = new Student("小红", 5, ConsoleColor.Red);
+            students[1] = new Student("小橙", 7, ConsoleColor.Yellow);
+            students[2] = new Student("小黄", 7, ConsoleColor.DarkYellow);
+            students[3] = new Student("小绿", 4, ConsoleColor.Green);
+            students[4] = new Student("小青", 4, ConsoleColor.Cyan);
+            students[5] = new Student("小蓝", 3, ConsoleColor.Blue);
+            students[6] = new Student("小紫", 4, ConsoleColor.Magenta);
+
+
+            IEnumerable classInSchool = new ClassInSchool2(students);
+            foreach (Student student in classInSchool)
+            {
+                ConsoleUtil.WriteLine($"{student}", student.Color);
+            }
+            Console.WriteLine();
+
+
+            string[] data = {"1", "2", "3", "4", "5", "6", "7", "8"};
+            IAggregate<string> myAggregate = new MyAggregate<string>(data, 3);
+            IIterator<string> myAggregateIterator = myAggregate.CreateIterator();
+            int index = 0;
+            while (myAggregateIterator.MoveNext())
+            {
+                ConsoleUtil.WriteLine($"第{++index}页", ConsoleColor.Green);
+                foreach (var element in myAggregateIterator.Current)
+                {
+                    ConsoleUtil.WriteLine($"{element}", ConsoleColor.White);
+                }
+            }
+            Console.WriteLine();
+
+
+            IAggregate<Student> myAggregate1 = new MyAggregate<Student>(students, 3);
+            IIterator<Student> myAggregateIterator1 = myAggregate1.CreateIterator();
+            int index1 = 0;
+            while (myAggregateIterator1.MoveNext())
+            {
+                ConsoleUtil.WriteLine($"第{++index1}页", ConsoleColor.White);
+                foreach (var element in myAggregateIterator1.Current)
+                {
+                    ConsoleUtil.WriteLine($"{element}", element.Color);
+                }
+            }
         }
     }
 }
