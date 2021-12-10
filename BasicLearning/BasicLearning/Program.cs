@@ -67,6 +67,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Mediator();
 
+            // Gof_Behavior_Memento();
+
             Console.ReadLine();
         }
 
@@ -733,6 +735,23 @@ namespace BasicLearning
             mediator.Graphic = graphicPane;
             
             listPane.Select();
+        }
+
+        private static void Gof_Behavior_Memento()
+        {
+            GameMementoCaretaker gameMementoCaretaker = new GameMementoCaretaker();
+            GameInfo gameInfo = new GameInfo();
+            gameInfo.Scene = "场景2";
+            gameInfo.Player = new GamePlayer() {Name = "Lsj", Lv = 3};
+            
+            gameMementoCaretaker.Memento = gameInfo.Save();
+            
+            gameInfo.Scene = "场景3";
+            gameInfo.Player.Lv = 5;
+            
+            gameInfo.Restore(gameMementoCaretaker.Memento);
+
+            Console.WriteLine($"回到存档：{gameInfo.Scene} {gameInfo.Player.Name} Lv.{gameInfo.Player.Lv}");
         }
     }
 }

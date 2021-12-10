@@ -62,6 +62,7 @@
     <Compile Include="GoF\Interpreter.cs" />
     <Compile Include="GoF\Iterator.cs" />
     <Compile Include="GoF\Mediator.cs" />
+    <Compile Include="GoF\Memento.cs" />
     <Compile Include="GoF\Prototype.cs" />
     <Compile Include="GoF\Proxy.cs" />
     <Compile Include="GoF\SimpleFactory.cs" />
