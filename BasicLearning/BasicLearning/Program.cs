@@ -65,6 +65,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Iterator();
 
+            // Gof_Behavior_Mediator();
+
             Console.ReadLine();
         }
 
@@ -718,6 +720,19 @@ namespace BasicLearning
                     ConsoleUtil.WriteLine($"{element}", element.Color);
                 }
             }
+        }
+
+        private static void Gof_Behavior_Mediator()
+        {
+            AbMediator mediator = new MediatorWindow();
+            TextPane textPane = new TextPane(mediator);
+            ListPane listPane = new ListPane(mediator);
+            GraphicPane graphicPane = new GraphicPane(mediator);
+            mediator.Text = textPane;
+            mediator.List = listPane;
+            mediator.Graphic = graphicPane;
+            
+            listPane.Select();
         }
     }
 }
