@@ -69,6 +69,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Memento();
 
+            // Gof_Behavior_Observer();
+
             Console.ReadLine();
         }
 
@@ -752,6 +754,22 @@ namespace BasicLearning
             gameInfo.Restore(gameMementoCaretaker.Memento);
 
             Console.WriteLine($"回到存档：{gameInfo.Scene} {gameInfo.Player.Name} Lv.{gameInfo.Player.Lv}");
+        }
+
+        private static void Gof_Behavior_Observer()
+        {
+            Stock sunnyCompanyStock = new Stock("Sunny公司股票", 200);
+            
+            AbInvestor investor1 = new NormalInvestor("股民1");
+            AbInvestor investor2 = new NormalInvestor("股民2");
+            
+            sunnyCompanyStock.Watch(investor1);
+            sunnyCompanyStock.Watch(investor2);
+            
+            sunnyCompanyStock.PriceFloating(5);
+            sunnyCompanyStock.PriceFloating(15);
+            sunnyCompanyStock.UnWatch(investor2);
+            sunnyCompanyStock.PriceFloating(-20);
         }
         
         /*
