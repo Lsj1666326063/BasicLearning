@@ -73,6 +73,8 @@ namespace BasicLearning
 
             // Gof_Behavior_State();
 
+            // Gof_Behavior_Strategy();
+            
             Console.ReadLine();
         }
 
@@ -808,6 +810,19 @@ namespace BasicLearning
             ConsoleUtil.WriteLine($"玩家胜利 获得积分2", ConsoleColor.Yellow);
             pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(2));
 
+        }
+
+        private static void Gof_Behavior_Strategy()
+        {
+            AbPlane helicopter = new Helicopter("直升机");
+            AbPlane airPlane = new AirPlane("客机");
+            AbPlane fighter = new Fighter("歼击机");
+            AbPlane harrier = new Harrier("鹞式战斗机");
+            
+            Console.WriteLine($"{helicopter.Name}\t起飞特征：{helicopter.TakeOff()}\t飞行特征：{helicopter.Fly()}");
+            Console.WriteLine($"{airPlane.Name}\t起飞特征：{airPlane.TakeOff()}\t飞行特征：{airPlane.Fly()}");
+            Console.WriteLine($"{fighter.Name}\t起飞特征：{fighter.TakeOff()}\t飞行特征：{fighter.Fly()}");
+            Console.WriteLine($"{harrier.Name}\t起飞特征：{harrier.TakeOff()}\t飞行特征：{harrier.Fly()}");
         }
         
         /*
