@@ -71,6 +71,8 @@ namespace BasicLearning
 
             // Gof_Behavior_Observer();
 
+            // Gof_Behavior_State();
+
             Console.ReadLine();
         }
 
@@ -770,6 +772,42 @@ namespace BasicLearning
             sunnyCompanyStock.PriceFloating(15);
             sunnyCompanyStock.UnWatch(investor2);
             sunnyCompanyStock.PriceFloating(-20);
+        }
+
+        private static void Gof_Behavior_State()
+        {
+            IPokerPlayer pokerPlayer = new PokerPlayer(0);
+            
+            pokerPlayer.Play();
+            pokerPlayer.PeekCards();
+            pokerPlayer.ChangeCards();
+            ConsoleUtil.WriteLine($"玩家胜利 获得积分5", ConsoleColor.Yellow);
+            pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(5));
+            ConsoleUtil.WriteLine($"------------------------------------------------", ConsoleColor.Yellow);
+            pokerPlayer.Play();
+            pokerPlayer.PeekCards();
+            pokerPlayer.ChangeCards();
+            ConsoleUtil.WriteLine($"玩家胜利 获得积分3", ConsoleColor.Yellow);
+            pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(3));
+            ConsoleUtil.WriteLine($"------------------------------------------------", ConsoleColor.Yellow);
+            pokerPlayer.Play();
+            pokerPlayer.PeekCards();
+            pokerPlayer.ChangeCards();
+            ConsoleUtil.WriteLine($"玩家胜利 获得积分2", ConsoleColor.Yellow);
+            pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(2));
+            ConsoleUtil.WriteLine($"------------------------------------------------", ConsoleColor.Yellow);
+            pokerPlayer.Play();
+            pokerPlayer.PeekCards();
+            pokerPlayer.ChangeCards();
+            ConsoleUtil.WriteLine($"玩家失败 扣除积分5", ConsoleColor.Yellow);
+            pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(-5));
+            ConsoleUtil.WriteLine($"------------------------------------------------", ConsoleColor.Yellow);
+            pokerPlayer.Play();
+            pokerPlayer.PeekCards();
+            pokerPlayer.ChangeCards();
+            ConsoleUtil.WriteLine($"玩家胜利 获得积分2", ConsoleColor.Yellow);
+            pokerPlayer.UpdateScore(pokerPlayer.DoubleScore(2));
+
         }
         
         /*
