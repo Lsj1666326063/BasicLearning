@@ -6,5 +6,6 @@
   "Adapter":"ClassAdapter",
   "BridgeConcreteImplementor":"MongoDbData",
   "BridgeRefinedAbstraction":"PdfDbDataFile",
-  "Facade":"MacOnFacade"
+  "Facade":"MacOnFacade",
+  "TemplateMethod":"DirectoryDisplayByFileName"
 }

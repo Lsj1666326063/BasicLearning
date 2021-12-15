@@ -74,6 +74,8 @@ namespace BasicLearning
             // Gof_Behavior_State();
 
             // Gof_Behavior_Strategy();
+
+            // Gof_Behavior_TemplateMethod();
             
             Console.ReadLine();
         }
@@ -823,6 +825,13 @@ namespace BasicLearning
             Console.WriteLine($"{airPlane.Name}\t起飞特征：{airPlane.TakeOff()}\t飞行特征：{airPlane.Fly()}");
             Console.WriteLine($"{fighter.Name}\t起飞特征：{fighter.TakeOff()}\t飞行特征：{fighter.Fly()}");
             Console.WriteLine($"{harrier.Name}\t起飞特征：{harrier.TakeOff()}\t飞行特征：{harrier.Fly()}");
+        }
+
+        private static void Gof_Behavior_TemplateMethod()
+        {
+            string objTypeName = config.GetTemplateMethod();
+            DirectoryDisplay directoryDisplay = (DirectoryDisplay) Util.ReflectionInstance(objTypeName,"aaa/bbb/ccc");
+            directoryDisplay.DisplayAllFileName();
         }
         
         /*

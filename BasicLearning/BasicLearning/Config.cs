@@ -70,6 +70,11 @@ namespace BasicLearning
             return gofConfigData["Facade"].ToString();
         }
         
+        public string GetTemplateMethod()
+        {
+            return gofConfigData["TemplateMethod"].ToString();
+        }
+        
         #endregion
     }
 }
