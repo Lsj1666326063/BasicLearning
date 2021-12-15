@@ -71,6 +71,7 @@
     <Compile Include="GoF\State.cs" />
     <Compile Include="GoF\Strategy.cs" />
     <Compile Include="GoF\TemplateMethod.cs" />
+    <Compile Include="GoF\Visitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThirdParty\LitJson\IJsonWrapper.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using LitJson;
@@ -76,6 +77,8 @@ namespace BasicLearning
             // Gof_Behavior_Strategy();
 
             // Gof_Behavior_TemplateMethod();
+
+            // Gof_Behavior_Visitor();
             
             Console.ReadLine();
         }
@@ -832,6 +835,28 @@ namespace BasicLearning
             string objTypeName = config.GetTemplateMethod();
             DirectoryDisplay directoryDisplay = (DirectoryDisplay) Util.ReflectionInstance(objTypeName,"aaa/bbb/ccc");
             directoryDisplay.DisplayAllFileName();
+        }
+
+        private static void Gof_Behavior_Visitor()
+        {
+            AbCandidate cat = new StudentCandidate("阿猫",5,89);
+            AbCandidate dog = new StudentCandidate("阿狗",2,93);
+            AbCandidate grapeTree = new TeacharCandidate("葡萄树",12,90);
+            List<AbCandidate> candidates = new List<AbCandidate>();
+            candidates.Add(cat);
+            candidates.Add(dog);
+            candidates.Add(grapeTree);
+            CandidateCenter candidateCenter = new CandidateCenter(candidates);
+            
+            Console.WriteLine($"科研奖审查开始");
+            IAwardExaminer researchAwardExaminer = new ResearchAwardExaminer();
+            candidateCenter.StartCheck(researchAwardExaminer);
+            
+            Console.WriteLine();
+            
+            Console.WriteLine($"成绩优秀奖审查开始");
+            IAwardExaminer scoreIllustriousnessAwardExaminer = new ScoreIllustriousnessAwardExaminer();
+            candidateCenter.StartCheck(scoreIllustriousnessAwardExaminer);
         }
         
         /*
