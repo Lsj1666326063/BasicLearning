@@ -33,6 +33,8 @@ namespace BasicLearning
 
             // DataStructure_DoubleLinkedListTest();
 
+            // DataStructure_CircleSingleLinkedList_JosephuTest();
+
 
             // GoF_Create_SimpleFactoryTest();
 
@@ -364,6 +366,12 @@ namespace BasicLearning
             Console.WriteLine();
 
             doubleLinkedList.ReversalLog();
+        }
+
+        private static void DataStructure_CircleSingleLinkedList_JosephuTest()
+        {
+            Josephu josephu = new Josephu();
+            josephu.JosephuCircle(5, 1, 2);
         }
 
         private static void GoF_Create_SimpleFactoryTest()
