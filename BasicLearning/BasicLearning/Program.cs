@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using LitJson;
 
@@ -20,7 +21,7 @@ namespace BasicLearning
         {
             config = new Config();
 
-            // Test1();
+            Test1();
 
 
             // DataStructure_MyArrayListTest();
@@ -144,8 +145,11 @@ namespace BasicLearning
             // Console.WriteLine("333");
 
 
-            if (int.TryParse("-1", out int result))
-                ConsoleUtil.WriteLine($"{result}", ConsoleColor.Green);
+            // if (int.TryParse("-1", out int result))
+            //     ConsoleUtil.WriteLine($"{result}", ConsoleColor.Green);
+            
+            TestWrite();
+            TestRead();
         }
 
         private static void DataStructure_MyArrayListTest()
@@ -903,5 +907,38 @@ namespace BasicLearning
 
             主要是关联关系的细化需要注意强弱，由若到强分别是 【依赖(虚线箭头) < 关联(实线箭头) < 聚合(空心菱形实线箭头) < 组合(实心菱形实线箭头)】
          */
+        
+        
+        static string path = @"E:\C#Projects\BasicLearning\BasicLearning\LearnFileStream.txt";
+            
+        private static void TestWrite()
+        {
+            //定义写文件流
+            FileStream fsw = new FileStream(path, FileMode.OpenOrCreate);
+            //写入的内容
+            string inputStr = "sdsfsdf";
+            //字符串转byte[]
+            byte[] writeBytes = Encoding.UTF8.GetBytes(inputStr);
+            //写入
+            fsw.Write(writeBytes, 0, writeBytes.Length);
+            //关闭文件流
+            fsw.Close();
+        }
+        
+        private static void TestRead()
+            {
+                //定义读文件流
+                FileStream fsr = new FileStream(path, FileMode.Open);
+                //开辟内存区域 1024 * 1024 bytes
+                byte[] readBytes = new byte[1024 * 1024];
+                //开始读数据
+               int count = fsr.Read(readBytes, 0, readBytes.Length);
+                //byte[]转字符串
+                string readStr = Encoding.UTF8.GetString(readBytes, 0, count);
+                //关闭文件流
+                fsr.Close();
+                //显示文件内容
+                Console.WriteLine(readStr);
+            }
     }
 }
