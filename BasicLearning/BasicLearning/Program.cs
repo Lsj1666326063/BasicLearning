@@ -148,8 +148,11 @@ namespace BasicLearning
             // if (int.TryParse("-1", out int result))
             //     ConsoleUtil.WriteLine($"{result}", ConsoleColor.Green);
             
-            TestWrite();
-            TestRead();
+            // TestWrite();
+            // TestRead();
+            
+            
+            // Console.WriteLine(System.Net.Dns.GetHostName());
         }
 
         private static void DataStructure_MyArrayListTest()
