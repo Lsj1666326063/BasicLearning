@@ -17,6 +17,12 @@ namespace BasicLearning
     {
         private static Config config;
 
+        private enum testEnum
+        {
+            a,
+            b
+        }
+
         public static void Main(string[] args)
         {
             config = new Config();
@@ -98,7 +104,7 @@ namespace BasicLearning
             // Console.WriteLine($"a.GetLength(0) = {a.GetLength(0)} , a.GetLength(1) = {a.GetLength(1)}");
 
 
-            // Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
+            Console.WriteLine($"{Directory.GetCurrentDirectory()}  ");
 
 
             // //-?(\d+)\.?(\d+)?
@@ -153,6 +159,16 @@ namespace BasicLearning
             
             
             // Console.WriteLine(System.Net.Dns.GetHostName());
+            
+            // for (int i = 0; i < 300; i++)
+            // {
+            //     Console.WriteLine($"i = {i}\tHex:{(i & 0xff)}\tDec:{(i & 255)}\t%:{(i % 255)}");
+            // }
+            
+            // Console.WriteLine(Math.Round(0.562));
+
+            testEnum a = testEnum.a;
+            Console.WriteLine(a);
         }
 
         private static void DataStructure_MyArrayListTest()
