@@ -75,6 +75,7 @@
     <Compile Include="GoF\Struct\Facade.cs" />
     <Compile Include="GoF\Struct\Flyweight.cs" />
     <Compile Include="GoF\Struct\Proxy.cs" />
+    <Compile Include="Noise\PerlinNoise.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThirdParty\LitJson\IJsonWrapper.cs" />
