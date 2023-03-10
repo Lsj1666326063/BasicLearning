@@ -27,7 +27,7 @@ namespace BasicLearning
         {
             config = new Config();
 
-            Test1();
+            // Test1();
 
 
             // DataStructure_MyArrayListTest();
@@ -69,7 +69,7 @@ namespace BasicLearning
 
             // Gof_Behavior_ChainOfResponsibility();
 
-            // Gof_Behavior_Command();
+            Gof_Behavior_Command();
 
             // Gof_Behavior_Interpreter();
 

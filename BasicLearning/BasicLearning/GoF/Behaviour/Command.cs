@@ -129,33 +129,22 @@ namespace BasicLearning
         public MenuItem OpenMenu;
         public MenuItem EditMenu;
         public MenuItem MacroMenu;
-
-        private BoardScreen bs;
         
         public Menu()
         {
-            bs = new BoardScreen();
-            
             Command createCommand = new CreateCommand();
-            createCommand.SetBoardScreen(bs);
-            Command openCommand = new OpenCommand();
-            openCommand.SetBoardScreen(bs);
-            Command editCommand = new EditCommand();
-            editCommand.SetBoardScreen(bs);
-            MacroCommand createOpenEditCommand = new CreateOpenEditCommand();
-            createOpenEditCommand.AddCommand(createCommand);
-            createOpenEditCommand.AddCommand(editCommand);
-            createOpenEditCommand.AddCommand(openCommand);
-            
             CreateMenu = new MenuItem();
             CreateMenu.SetCommand(createCommand);
             
+            Command openCommand = new OpenCommand();
             OpenMenu = new MenuItem();
             OpenMenu.SetCommand(openCommand);
             
+            Command editCommand = new EditCommand();
             EditMenu = new MenuItem();
             EditMenu.SetCommand(editCommand);
             
+            MacroCommand createOpenEditCommand = new CreateOpenEditCommand();
             MacroMenu = new MenuItem();
             MacroMenu.SetCommand(createOpenEditCommand);
         }
@@ -164,13 +153,6 @@ namespace BasicLearning
 
     public abstract class Command
     {
-        protected BoardScreen bs;
-
-        public void SetBoardScreen(BoardScreen boardScreen)
-        {
-            bs = boardScreen;
-        }
-
         public abstract void Execute();
     }
 
@@ -206,7 +188,8 @@ namespace BasicLearning
     {
         public override void Execute()
         {
-            bs?.Create();
+            // TODO：获取公告版实例，调用方法
+            BoardScreen.Create();
         }
     }
 
@@ -214,7 +197,7 @@ namespace BasicLearning
     {
         public override void Execute()
         {
-            bs?.Open();
+            BoardScreen.Open();
         }
     }
 
@@ -222,29 +205,34 @@ namespace BasicLearning
     {
         public override void Execute()
         {
-            bs?.Edit();
+            BoardScreen.Edit();
         }
     }
 
     public class CreateOpenEditCommand : MacroCommand
     {
-        
+        public CreateOpenEditCommand()
+        {
+            AddCommand(new CreateCommand());
+            AddCommand(new EditCommand());
+            AddCommand(new OpenCommand());
+        }
     }
     
 
     public class BoardScreen
     {
-        public void Create()
+        public static void Create()
         {
             Console.WriteLine($"创建公告板");
         }
         
-        public void Open()
+        public static void Open()
         {
             Console.WriteLine($"打开公告板");
         }
 
-        public void Edit()
+        public static void Edit()
         {
             Console.WriteLine($"编辑公告板");
         }
